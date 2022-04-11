@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card's Gio</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cartStyle.css">
+    <link rel="stylesheet" href="assets/icons/css/font-awesome.css">
+</head>
+
+<body class="body-cart">
+    <header>
+        <div class="header header-cart">
+            <div class="container">
+                <nav class="menu-top">
+                    <div class="brand">
+                        <a href="index.html">Card's Gio</a>
+                    </div>
+                    <div class="icons-menu">
+                        <div class="icon--menu">
+                            <a href="carrinho.html" title="Ver carrinho">
+                                <i class="fa fa-shopping-cart fa-2x"></i>
+                                <div class="item--cart">
+                                    <span class="qt-item-cart">15</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="title-cart">
+                <h1>Meu carrinho</h1>
+            </div>
+
+            <div class="clean--cart">
+                <span>Seu carrinho está vazio!</span>
+                <i class="fa fa-frown-o" aria-hidden="true"></i>
+            </div>
+
+            <div class="table-itens">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                            <th>Preço Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="inserirLinha">
+                        <tr class="item-carrinho">
+                            <div class="teste" id="123">
+                                <td>
+                                    <img class="img-item-cart" src="" alt="">
+                                </td>
+                                <td class="item-name">titulo</td>
+                                <td>
+                                    <input type="number" name="quantidade" class="input-qt" value="" min="1">
+                                </td>
+                                <td class="unitPrice">preco unitario</td>
+                                <td class="totalPrice">preço total por item</td>
+                                <td>
+                                    <button type="button" class="btn btn-transp remove-item-cart">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </td>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="sum-total">
+                    <div class="opt--cart">
+                        <a href="produtos.html"><button type="button" class="btn ctn-compra">continuar
+                                comprando</button></a>
+                        <button type="button" class="btn limp-cart">limpar carrinho</button>
+                    </div>
+                    <div class="value--cart">
+                        <span class="text-1">Valor total</span><span class="text-2" id="vlr-fn-cart">R$ 50,00</span>
+                    </div>
+                </div>
+                <div class="finish-order">
+                    <button type="button" class="btn fn-compra" onclick="finalizaPedido()">Finalizar compra</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-body">
+
+                <div class="turn-left">
+                    <div class="modal-title">
+                        <span>confirmar pedido</span>
+                    </div>
+
+                    <div class="desc-info">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has
+                            been the industry's standard
+                            dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                            scrambled
+                            it to make a type specimen
+                            book
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="turn-right">
+                    <div class="content-close">
+                        <button type="button" onclick="cancPedido()" class="closeBtn">
+                            <i class="fa fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <form action="#" class="modal-form" method="post">
+                        <div class="input-group">
+                            <div class="input-form">
+                                <label for="firstName">Nome:</label>
+                                <input type="text" name="firstName" id="firstName" placeholder="Informe seu nome"
+                                    required>
+                            </div>
+                            <div class="input-form">
+                                <label for="lastName">Sobrenome:</label>
+                                <input type="text" name="lastName" id="lastName" placeholder="Informe seu sobrenome"
+                                    required>
+                            </div>
+                            <div class="input-form">
+                                <label for="userEmail">E-mail:</label>
+                                <input type="email" name="userEmail" id="userEmail" placeholder="Insira seu e-mail"
+                                    required>
+                            </div>
+                            <div class="input-form">
+                                <label for="whatsapp">Whatsapp:</label>
+                                <input type="tel" name="whatsapp" id="whatsapp"
+                                    placeholder="Insira o número do seu Whatsapp" required>
+                            </div>
+                        </div>
+                        <div class="termos-aceite">
+                            <input type="radio" name="termo" id="termo">
+                            <label for="termo">Li e concordo com a <a href="#">Política de uso de dados</a></label>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn limp-cart" onclick="cancPedido()">Cancelar</button>
+                            <button type="submit" class="btn fn-compra">Confirmar pedido</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <div class="container">
+            <ul class="info-footer">
+                <li class="item-info-footer">
+                    <a href="#">
+                        <h3>Home</h3>
+                    </a>
+                </li>
+                <li class="item-info-footer ">
+                    <a href="#">
+                        <h3>Contatos</h3>
+                    </a>
+                    <ul class="sub-list">
+                        <li class="sub-item"><a href="#">Whatsapp: (45) 9 9954-3826</a></li>
+                        <li class="sub-item"><a href="#">E-mail: giovani_diesel@hotmail.com</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item-info-footer">
+                    <a href="#">
+                        <h3>Categorias</h3>
+                    </a>
+                    <ul class="sub-list">
+                        <li class="sub-item"><a href="#">Cartas super raras</a></li>
+                        <li class="sub-item"><a href="#">Cartas raras</a></li>
+                        <li class="sub-item"><a href="#">Cartas douradas</a></li>
+                        <li class="sub-item"><a href="#">Cartas comuns</a></li>
+                        <li class="sub-item"><a href="#">Giros / spins</a></li>
+                    </ul>
+                </li>
+                <li class="item-info-footer">
+                    <a href="#">
+                        <h3>Politica de dados</h3>
+                    </a>
+                </li>
+            </ul>
+
+            <button type="button" class="goToTop" onclick="backToTop()"><i class="fa fa-arrow-up"></i></button>
+        </div>
+        <hr class="divisor">
+        <div class="copyright">
+            <span>Copyright &copy; <span class="nomeSite">Cards Gio</span> 2022</span>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/js/carrinhoExemplos.js"></script>
+
+    <script type="text/javascript" src="assets/js/carrinho.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+
+</html>
